@@ -21,6 +21,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        // 'password', 'remember_token',
     ];
+
+
+    public function role(){
+
+        return $this->belongsTo('App\Role');
+
+    }
+
 }
