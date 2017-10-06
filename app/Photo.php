@@ -8,7 +8,7 @@ class Photo extends Model
 {
     //
 
-    protected $uploads = '/images/';
+    protected $uploads = '/codehacking/public/images/';
 
     protected $fillable = ['file'];
 
