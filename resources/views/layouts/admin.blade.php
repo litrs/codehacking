@@ -53,8 +53,12 @@
 
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                    <i class="fa fa-user fa-fw"></i> {{Auth::user()->name}} <i class="fa fa-caret-down">
+
+
+
+                    </i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -137,13 +141,13 @@
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="/posts">All Posts</a>
-                            </li>
+                        <li>
+                        <a href="{{route('admin.posts.index')}}">All Posts</a>
+                    </li>
 
-                            <li>
-                                <a href="/posts/create">Create Post</a>
-                            </li>
+                    <li>
+                        <a href="{{route('admin.posts.create')}}">Create Post</a>
+                    </li>
 
                         </ul>
                         <!-- /.nav-second-level -->
@@ -298,11 +302,11 @@
                     <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="">All Posts</a>
+                            <a href="{{route('admin.posts.index')}}">All Posts</a>
                         </li>
 
                         <li>
-                            <a href="">Create Post</a>
+                            <a href="{{route('admin.posts.create')}}">Create Post</a>
                         </li>
 
                     </ul>
@@ -348,6 +352,10 @@
 
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
+
+
+<!-- Pieliku, lai darbojās dropdowns -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
 @yield('footer')
